@@ -1,6 +1,6 @@
 # talkbot
 
-requirements:
+Required Packages/modules:
 
 pip install chatterbot==0.8.6 
 
