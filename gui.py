@@ -52,9 +52,10 @@ def bottalk():
     
 
 root = Tk()
+from PIL import Image, ImageTk
+root.geometry("600x500")
   
-root.geometry("500x400")
-  
+# T = Text(root, height = 5, width = 52)
   
 from tkinter import scrolledtext
 l = Label(root, text = "TalkBot")
@@ -66,16 +67,23 @@ T = scrolledtext.ScrolledText(root,
                                     height = 10, 
                                     font = ("Times New Roman",
                                             15))
+
+photo=PhotoImage(file="mic1.png")
+
+
+b1 = Button(root, text="Speak",font=("Times New Roman",20),image=photo,command=bottalk,height=50, width=170,compound=LEFT )
   
-b1 = Button(root, text = "click here ",command=bottalk )
+b2 = Button(root, text = "Exit",font=("Times New Roman",17),
+            command = root.destroy)
   
-b2 = Button(root, text = "Exit",
-            command = root.destroy) 
-  
-l.pack()
+l.pack(pady=25)
 T.pack()
-b1.pack()
+b1.pack(pady=20)
 b2.pack()
   
   
 mainloop()
+# from PIL import Image
+# image = Image.open('mic.png')
+# new_image = image.resize((50, 50))
+# new_image.save('mic1.png')
