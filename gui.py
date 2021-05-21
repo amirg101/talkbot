@@ -4,7 +4,7 @@ import speech_recognition as sr
 import pyttsx3 
 bot=ChatBot('chotu')
 from chatterbot.trainers import ChatterBotCorpusTrainer
-# un-comment this if you are running this for the first time
+# un-comment these lines if you are running the script for the first time
 # bot.set_trainer(ChatterBotCorpusTrainer)
 # bot.train('chatterbot.corpus.english')
 
