@@ -55,7 +55,6 @@ root = Tk()
   
 root.geometry("500x400")
   
-# T = Text(root, height = 5, width = 52)
   
 from tkinter import scrolledtext
 l = Label(root, text = "TalkBot")
