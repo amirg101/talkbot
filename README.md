@@ -1,12 +1,12 @@
 # Talkbot
 
-Required Packages/modules:
+## Required Packages/modules:
 
-pip install chatterbot==0.8.6 
+  pip install chatterbot==0.8.6 
 
-pip install pyttsx3 
+  pip install pyttsx3 
 
-pip install speechrecognition
+  pip install speechrecognition
 
 ## GUI
 ![Screenshot (273)](https://user-images.githubusercontent.com/31856332/119152004-888bd880-ba6d-11eb-9bab-8d1bd505dad0.png)
