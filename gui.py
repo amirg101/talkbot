@@ -62,19 +62,18 @@ def bottalk():
             # Using google to recognize audio
             MyText = r.recognize_google(audio)
             MyText = MyText.lower()
+            # stop the script if user says 'bye' or 'goodbye'
             if MyText=='bye' or MyText=='goodbye':
                 # SpeakText("string") to convert text("string") to speech
                 SpeakText("Nice talking to you .. bye bye")
-            
+                # close the tkinter window
                 root.destroy()
                 return 0
             T.insert(END, "you :{} \n".format(MyText))
-                
+            #get reply from the bot
             reply=bot.get_response(MyText)
             print("You: {}".format(MyText))
             T.insert(END, "bot :{}\n".format(reply))
-
-
             print("bot: {}".format(reply))
             SpeakText(str(reply))
             T.see(END)
@@ -96,7 +95,7 @@ root.geometry("600x500")
 from tkinter import scrolledtext
 l = Label(root, text = "TalkBot")
 l.config(font =("Courier", 14))
-  
+
 T = scrolledtext.ScrolledText(root, 
                                     wrap = WORD, 
                                     width = 40, 
@@ -106,9 +105,9 @@ T = scrolledtext.ScrolledText(root,
 
 photo=PhotoImage(file="mic1.png")
 
-
+# 'speak' button which when pressed will listen to the user and get reply from the bot
 b1 = Button(root, text="Speak",font=("Times New Roman",20),image=photo,command=bottalk,height=50, width=170,compound=LEFT )
-  
+#exit button to close the tkinter window
 b2 = Button(root, text = "Exit",font=("Times New Roman",17),
             command = root.destroy)
   
@@ -116,7 +115,6 @@ l.pack(pady=25)
 T.pack()
 b1.pack(pady=20)
 b2.pack()
-  
   
 mainloop()
 # from PIL import Image
