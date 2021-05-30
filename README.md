@@ -19,8 +19,8 @@ https://realpython.com/python-speech-recognition/
 
 ## Errors you may face while installing pyaudio
 
-Facing installation problems while installing ??
-using the wheel file may be helpful in such cases. You may download wheel file at:
+Facing installation problems while installing pyaudio??
+using the wheel file may be helpful in such cases. You may download the wheel file at:
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
 Once downloaded, change the current working directory to the location where
 the wheel file is available and then install as given below:
