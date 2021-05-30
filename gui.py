@@ -1,33 +1,69 @@
 from tkinter import *
+'''
+Library : chatterbot
+class: chatbot
+'''
 from chatterbot import ChatBot
 import speech_recognition as sr
 import pyttsx3 
+'''
+Load the data & load the algorithm => load the library
+-Load the alogrithm /Trainer
+    ChatterBotCorpusTrainer
+        Library:chatterbot
+        module:trainers
+        class:ChatterBotCorpusTrainer
+'''
 bot=ChatBot('chotu')
 from chatterbot.trainers import ChatterBotCorpusTrainer
+'''
+set the trainer ;
+class:ChatBot
+    function:set_trainer(Name_of_the_trainer)
+    
+and train the chatbot on the corpus data
+    class :ChatBot
+    function:train
+'''
 # un-comment these lines if you are running the script for the first time
 # bot.set_trainer(ChatterBotCorpusTrainer)
 # bot.train('chatterbot.corpus.english')
 
 engine = pyttsx3.init()
 
+# Function to convert text to speech
 def SpeakText(command):
     engine.say(command) 
     engine.runAndWait()
     
 def bottalk():
+    
+    # Initialize the recognizer 
     r = sr.Recognizer() 
-
+    # Exception handling to handle
+    # exceptions at the runtime
     try:
-        
+        '''
+        interaction part
+            chatbot should prompt for a message from user(i/p msg)
+            if the msg is 'bye' =>Terminate msging /bot action
+            if msg is somethin else=>get proper response
+
+        Class : ChatBot
+        function : get_response(MESSAGE)
+        '''
         with sr.Microphone() as source:
-            
+            # wait for a second to let the recognizer
+            # adjust the energy threshold based on
+            # the surrounding noise level 
             r.adjust_for_ambient_noise(source, duration=0.1)
-            
+            #listens for the user's input
             audio = r.listen(source)
-            
+            # Using google to recognize audio
             MyText = r.recognize_google(audio)
             MyText = MyText.lower()
             if MyText=='bye' or MyText=='goodbye':
+                # SpeakText("string") to convert text("string") to speech
                 SpeakText("Nice talking to you .. bye bye")
             
                 root.destroy()
